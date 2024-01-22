@@ -621,7 +621,7 @@ export const earningData = [
     title: 'Customers',
     iconColor: '#03C9D7',
     iconBg: '#E5FAFB',
-    pcColor: 'red-600',
+    pcColor: 'red',
   },
   {
     icon: <BsBoxSeam />,
@@ -630,7 +630,7 @@ export const earningData = [
     title: 'Products',
     iconColor: 'rgb(255, 244, 229)',
     iconBg: 'rgb(254, 201, 15)',
-    pcColor: 'green-600',
+    pcColor: 'green',
   },
   {
     icon: <FiBarChart />,
@@ -640,7 +640,7 @@ export const earningData = [
     iconColor: 'rgb(228, 106, 118)',
     iconBg: 'rgb(255, 244, 229)',
 
-    pcColor: 'green-600',
+    pcColor: 'green',
   },
   {
     icon: <HiOutlineRefresh />,
@@ -649,7 +649,7 @@ export const earningData = [
     title: 'Refunds',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
-    pcColor: 'red-600',
+    pcColor: 'red',
   },
 ];
 
@@ -3083,11 +3083,11 @@ export const dropdownData = [
   },
 ];
 export const SparklineAreaData = [
-  { x: 1, yval: 2 },
-  { x: 2, yval: 6 },
-  { x: 3, yval: 8 },
-  { x: 4, yval: 5 },
-  { x: 5, yval: 10 },
+  { x: 1, y: 2 },
+  { x: 2, y: 6 },
+  { x: 3, y: 8 },
+  { x: 4, y: 5 },
+  { x: 5, y: 10 },
 
 ];
 
