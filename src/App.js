@@ -11,14 +11,14 @@ import { useStateContext } from "./contexts/ContextProvider";
 
 
 const App = () => {
-  const {activeMenu}=useStateContext();
+  const {activeMenu,currentMode,currentColor,themeSettings,setThemeSettings}=useStateContext();
   return (
-  <div>  
+  <div className={currentMode==='Dark'?'dark':''}>  
     <BrowserRouter>
       <div className="flex  relative bg-black dark:bg-main-bg">
         <div className="fixed bottom-0 right-0 " style={{zIndex:'1000'}}>
           <TooltipComponent content="settings" position="TopCenter">
-            <button type="button" className="text-3xl  p-3 hover:drop-shadow-xl hover:bg-light-gray text-white " style={{background:'blue',borderRadius:'50%'}}>
+            <button type="button" onClick={()=>setThemeSettings(true)} className="text-3xl  p-3 hover:drop-shadow-xl hover:bg-light-gray text-white " style={{background:currentColor,borderRadius:'50%'}}>
               <FiSettings/>
             </button>
           </TooltipComponent>
@@ -41,29 +41,30 @@ const App = () => {
       
 
       <div>
+        {themeSettings && <ThemeSettings/>}
         <Routes>
           {/* Dashboard */}
           <Route path="/" element={<Ecommerce/>} />
           <Route path="/ecommerce" element={<Ecommerce/>}/>
           {/* Pages */}
-          <Route path="/orders" element="Orders"/>
-          <Route path="/employees" element="Employees"/>
-          <Route path="/customers" element="Customers"/>
+          <Route path="/orders" element={<Orders/>}/>
+          <Route path="/employees" element={<Employees/>}/>
+          <Route path="/customers" element={<Customers/>}/>
           {/* Apps */}
-          <Route path="/kanban" element="Kanban"/>
-          <Route path="/editor" element="Editor"/>
-          <Route path="/calender" element="Calender"/>
-          <Route path="/color-picker" element="ColorPicker"/>
+          <Route path="/kanban" element={<Kanban/>}/>
+          <Route path="/editor" element={<Editor/>}/>
+          <Route path="/calendar" element={<Calendar/>}/>
+          <Route path="/color-picker" element={<ColorPicker/>}/>
 
           {/* Charts */}
-          <Route path="/line" element="Line"/>
-          <Route path="/area" element="Area"/>
-          <Route path="/bar" element="Bar"/>
-          <Route path="/pie" element="Pie"/>
-          <Route path="/financial" element="Financial"/>
-          <Route path="/color-mapping" element="ColorMapping"/>
-          <Route path="/pyramid" element="Pyramid"/>
-          <Route path="/stacked" element="Stacked"/>
+          <Route path="/line" element={<Line/>}/>
+          <Route path="/area" element={<Area/>}/>
+          <Route path="/bar" element={<Bar/>}/>
+          <Route path="/pie" element={<Pie/>}/>
+          <Route path="/financial" element={<Financial/>}/>
+          <Route path="/color-mapping" element={<ColorMapping/>}/>
+          <Route path="/pyramid" element={<Pyramid/>}/>
+          <Route path="/stacked" element={<Stacked/>}/>
         </Routes>
       </div>
       </div>

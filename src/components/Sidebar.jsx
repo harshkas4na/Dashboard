@@ -58,9 +58,7 @@ const Sidebar = () => {
                     key={link.name}
                     onClick={handleCloseSideBar}
                     className={({isActive})=>
-                    isActive?activeLink:normalLink
-
-                    }
+                    isActive?activeLink:normalLink}
                   >
                       {link.icon}
                       <span className='capitalize'>
