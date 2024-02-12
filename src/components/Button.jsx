@@ -12,4 +12,4 @@ const Button = ({bgColor,color,size,text,borderRadius}) => {
   )
 }
 
-export default Button
+export default Button;
