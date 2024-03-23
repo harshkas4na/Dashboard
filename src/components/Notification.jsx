@@ -2,22 +2,24 @@ import React from 'react'
 
 import {MdOutlineCancel} from 'react-icons/md';
 import {chatData} from '../data/dummy';
+import { useStateContext } from '../contexts/ContextProvider';
 
 
 
 
 const Notification = () => {
+  const {handleClick}=useStateContext();
   
   return (
     <div className='w-screen  bg-half-transparent top-0 right-0 nav-item fixed'>
-      <div className='h-[440px] bg-white dark:text-gray-200 w-80 fixed right-36 top-16 dark:[#484B52] '>
+      <div className='h-[440px] bg-white dark:text-white dark:bg-main-dark-bg  w-80 fixed right-36 top-16 dark:[#484B52] '>
           <div className='flex justify-between ml-4 p-4 items-center'>
             <p className='text-lg font-semibold'> 
             Notification
             </p>
             <button 
             type='button'
-            onClick={()=>{}}
+            onClick={()=>handleClick()}
             style={{color:'rgb(153,171,180)',borderRadius:'50%'}}
             className='text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray'
             >

@@ -2,21 +2,23 @@ import React from 'react'
 
 import {MdOutlineCancel} from 'react-icons/md';
 import {cartData} from "../data/dummy"
+import { useStateContext } from '../contexts/ContextProvider';
 
 
 
 const Cart = () => {
+  const {handleClick}=useStateContext();
   
   return (
     <div className='w-screen  bg-half-transparent top-0 right-0 nav-item fixed'>
-      <div className='h-screen bg-white dark:text-gray-200 w-400 float-right dark:[#484B52]'>
+      <div className='h-screen bg-white dark:text-white dark:bg-main-dark-bg  w-400 float-right dark:[#484B52]'>
         <div className='flex justify-between ml-4 p-4 items-center'>
           <p className='text-lg font-semibold'> 
             Shopping Cart
           </p>
           <button 
           type='button'
-          onClick={()=>{}}
+          onClick={()=>handleClick()}
           style={{color:'rgb(153,171,180)',borderRadius:'50%'}}
           className='text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray'
           >
